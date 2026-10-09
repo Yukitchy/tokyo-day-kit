@@ -1,43 +1,78 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Your Tokyo Day Kit</title>
 <meta name="description" content="Ready-to-forward Tokyo day pages, the tools behind each tour, and what comes next.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%231a5c3a'/><text x='32' y='44' font-size='34' text-anchor='middle' fill='white' font-family='Arial' font-weight='700'>T</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#fffdf6;--card:#fff;--ink:#111;--mute:#6f695e;--line:#eae4d6;--acc:#1a5c3a;--r:10px}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15140f;--card:#1e1d17;--ink:#f3efe4;--mute:#b3ab9a;--line:#34312a;--acc:#6fc196}}
-*{box-sizing:border-box}
-body{margin:0;font-family:Inter,-apple-system,"Hiragino Sans",sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;-webkit-text-size-adjust:100%}
-.wrap{max-width:760px;margin:0 auto;padding:0 16px}
-header{padding:40px 0 26px}
-.kicker{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--acc);margin:0 0 10px}
-h1{font-size:34px;line-height:1.15;letter-spacing:-.02em;margin:0 0 12px}
-header p{font-size:17px;color:var(--mute);margin:0}
-section{padding:8px 0 26px}
-.sechead{display:flex;align-items:baseline;gap:12px;padding:22px 0 14px;border-top:1px solid var(--line)}
-.sechead .n{font-weight:800;font-size:24px;line-height:1;color:var(--acc)}
-.sechead b{font-size:19px;font-weight:600}
-.lead{color:var(--mute);font-size:15px;margin:0 0 14px}
-.cards{display:grid;gap:10px}
-.card{display:block;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px 18px;color:inherit;text-decoration:none}
-a.card{border:2px solid var(--ink)}
-a.card:active,a.card:hover{border-color:var(--acc)}
-.card strong{display:block;font-size:17px;font-weight:600}
-.card em{display:block;font-style:normal;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--acc);margin:3px 0 6px}
-.card span{display:block;font-size:15px;color:var(--mute)}
-.card i{display:block;font-style:normal;font-size:13px;margin-top:8px;text-decoration:underline;text-underline-offset:3px}
-.tip{border-left:4px solid var(--acc)}
-.tip strong{font-size:16px}
-.src{font-size:12px!important;margin-top:6px}
-.src a{color:var(--mute)}
-.choice{display:grid;gap:10px}
-.choice .card{border:2px solid var(--ink)}
-.opts{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
-.btn{display:inline-block;padding:10px 14px;border-radius:8px;background:var(--acc);color:#fff;text-decoration:none;font-weight:600;font-size:14px}
-.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
-footer{padding:22px 0 50px;border-top:1px solid var(--line);font-size:14px;color:var(--mute)}
-footer a{color:var(--ink)}
+:root{--bg:#f4f1e8;--ink:#14130f;--mute:#5b564a;--g:#14633f;--b:#2340c8;--y:#ffc72c;--r:#c23219;--bar:64px}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth;scroll-padding-top:60px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Manrope,-apple-system,"Hiragino Sans",sans-serif;line-height:1.5;-webkit-text-size-adjust:100%;padding-bottom:calc(var(--bar) + 28px + env(safe-area-inset-bottom));overflow-x:hidden}
+.wrap{max-width:760px;margin:0 auto}
+header{padding:34px 16px 26px}
+.kicker{font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--g);margin:0 0 10px}
+h1{font-size:clamp(34px,11vw,52px);line-height:1.02;letter-spacing:-.035em;font-weight:800;margin:0 0 14px}
+header p{font-size:16px;color:var(--mute);margin:0;max-width:34em}
+/* tabs */
+nav{position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:2px solid var(--ink)}
+nav .in{display:flex;gap:6px;padding:8px 16px;max-width:760px;margin:0 auto}
+nav a{flex:1;min-width:0;text-align:center;text-decoration:none;color:var(--ink);font-weight:800;font-size:13px;padding:9px 0;border-radius:999px;border:2px solid var(--ink);background:transparent;transition:background .15s,color .15s}
+nav a.on[data-c="g"]{background:var(--g);color:#fff;border-color:var(--g)}
+nav a.on[data-c="b"]{background:var(--b);color:#fff;border-color:var(--b)}
+nav a.on[data-c="y"]{background:var(--y);color:var(--ink);border-color:var(--ink)}
+nav a.on[data-c="r"]{background:var(--r);color:#fff;border-color:var(--r)}
+nav a:focus-visible,.btn:focus-visible,.card:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+/* sections */
+section{padding:30px 0 6px}
+.sh{padding:0 16px;display:flex;gap:12px;align-items:center;margin-bottom:8px}
+.n{flex:none;width:40px;height:40px;border-radius:12px;display:grid;place-items:center;font-weight:800;font-size:20px;color:#fff}
+h2{font-size:21px;line-height:1.15;letter-spacing:-.02em;font-weight:800;margin:0}
+.lead{padding:0 16px;margin:0 0 14px;color:var(--mute);font-size:15px}
+.rail{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 16px 8px;scroll-padding:0 16px;-webkit-overflow-scrolling:touch;scrollbar-width:none;overscroll-behavior-x:contain}
+.rail::-webkit-scrollbar{display:none}
+.card{flex:none;width:min(78vw,300px);scroll-snap-align:start;border-radius:24px;padding:20px 18px 18px;display:flex;flex-direction:column;min-height:230px;color:#fff;text-decoration:none}
+.card strong{font-size:21px;line-height:1.15;letter-spacing:-.02em;font-weight:800;display:block}
+.card em{font-style:normal;font-size:12px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;opacity:.92;margin:8px 0 10px;display:block}
+.card span{font-size:15px;font-weight:500;display:block}
+.card i{margin-top:auto;padding-top:16px;font-style:normal;font-weight:800;font-size:14px;display:flex;justify-content:space-between;align-items:center}
+.card i b{width:36px;height:36px;border-radius:50%;background:#fff;display:grid;place-items:center;font-size:16px}
+.cg{background:var(--g)}.cg i b{color:var(--g)}
+.cb{background:var(--b)}
+.cy{background:var(--y);color:var(--ink)}
+.cr{background:var(--r)}
+.card .src{margin-top:auto;padding-top:14px;font-size:13px}
+.card .src a{color:inherit;font-weight:800;text-underline-offset:3px}
+.card .no{font-size:12px;font-weight:800;letter-spacing:.08em;opacity:.85;margin-bottom:10px}
+.dots{display:flex;justify-content:center;gap:7px;padding:6px 0 0}
+.dots b{width:7px;height:7px;border-radius:99px;background:#14130f33;transition:width .2s,background .2s}
+.dots b.on{width:22px;background:var(--ink)}
+.btn{display:flex;align-items:center;justify-content:center;text-align:center;min-height:48px;padding:0 14px;border-radius:14px;background:var(--r);color:#fff;text-decoration:none;font-weight:800;font-size:14px;border:2px solid var(--r)}
+.btn.ghost{background:#fff;color:var(--ink);border-color:var(--ink)}
+.btn.go{background:var(--ink);border-color:var(--ink)}
+/* bottom bar */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--ink);padding:10px 16px calc(10px + env(safe-area-inset-bottom))}
+.bar .in{max-width:760px;margin:0 auto;display:flex;gap:8px;align-items:center;min-height:44px}
+.bar small{display:none}
+.bar .btn{flex:1;min-height:44px;font-size:13px;background:var(--y);color:var(--ink);border-color:var(--y)}
+.bar .btn.ghost{background:transparent;color:#fff;border-color:#fff}
+.bar .set{display:none;flex:1;gap:8px}.bar .set.on{display:flex}
+footer{padding:30px 16px 20px;font-size:14px;color:var(--mute)}
+footer a{color:var(--ink);font-weight:700}
+.shot{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;object-position:top;border-radius:14px;margin:0 0 14px;background:#fff3}
+.cg i{padding-top:14px}
+.promo{padding:0 0 4px}
+.promo .rail .p{flex:none;width:min(52vw,200px);scroll-snap-align:start;display:block;border-radius:20px;overflow:hidden;border:2px solid var(--ink);line-height:0}
+.promo .rail .p img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block}
+.promo .rail .p img{width:100%!important;max-width:100%!important;height:auto!important;object-fit:contain!important;transform:none!important}
+.more{display:flex;flex-wrap:wrap;gap:8px;padding:0 16px 22px}
+.more a{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:999px;border:2px solid var(--ink);color:var(--ink);text-decoration:none;font-weight:800;font-size:14px;background:#fff}
+.more a.f{background:var(--ink);color:#fff}
+footer .more{padding:0 0 16px}
+@media (min-width:600px){.card{width:300px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style></head>
 <body>
 <div class="wrap">
@@ -46,46 +81,91 @@ footer a{color:var(--ink)}
 <h1>Your Tokyo day kit</h1>
 <p>Pages you can forward to clients as they are, the tools behind each Tokyo day, and the next two things to decide.</p>
 </header>
+<div class="more"><a class="f" href="https://tour.animesenseijp.com/" target="_blank" rel="noopener">The Akihabara anime tour ↗</a><a href="https://www.instagram.com/yukianimesensei/" target="_blank" rel="noopener">@yukianimesensei ↗</a></div>
+<div class="promo"><div class="rail">
+<a class="p" href="https://tour.animesenseijp.com/" target="_blank" rel="noopener"><img src="img/promo-1.jpg" width="800" height="1000" alt="Akihabara anime tour promo slide"></a>
+<a class="p" href="https://tour.animesenseijp.com/" target="_blank" rel="noopener"><img src="img/promo-2.jpg" width="800" height="1000" alt="Akihabara anime tour promo slide" loading="lazy"></a>
+</div><div class="dots"></div></div>
+</div>
+<nav aria-label="Sections"><div class="in">
+<a href="#s1" data-c="g" class="on">1 Pages</a><a href="#s2" data-c="b">2 Each day</a><a href="#s3" data-c="y">3 Tips</a><a href="#s4" data-c="r">4 Decide</a>
+</div></nav>
+<main class="wrap">
 
-<section>
-<div class="sechead"><span class="n">1</span><b>Pages you can forward</b></div>
+<section id="s1" data-c="g">
+<div class="sh"><span class="n" style="background:var(--g)">1</span><h2>Pages you can forward</h2></div>
 <p class="lead">Each one is a single link. Your client opens it, picks a plan, and replies. No login, no app, works on a phone.</p>
-<div class="cards">
-<a class="card" href="https://yukitchy.github.io/tokyo-arrival-day/" target="_blank" rel="noopener"><strong>Tokyo arrival day</strong><em>Family of five · Dec 21</em><span>Two plans around a taiko class, plus five lunch spots to pick from.</span><i>Open the page ↗</i></a>
-<a class="card" href="https://yukitchy.github.io/patrick-tokyo-day/" target="_blank" rel="noopener"><strong>A one-day Tokyo plan for one guest</strong><em>Kyudo · metal · Daikanyama</em><span>Three routes built around his interests: a kyudo shop, record stores, a wrestling shop.</span><i>Open the page ↗</i></a>
-<a class="card" href="https://yukitchy.github.io/manga-week/" target="_blank" rel="noopener"><strong>Manga week</strong><em>Tokyo · Kyoto · Osaka</em><span>A seven-day manga trip across three cities, day by day.</span><i>Open the page ↗</i></a>
-<a class="card" href="https://yukitchy.github.io/shibuya-walk/" target="_blank" rel="noopener"><strong>Today's walk</strong><em>Shibuya · Daikanyama · Nakameguro</em><span>The page for this afternoon.</span><i>Open the page ↗</i></a>
-</div>
+<div class="rail">
+<a class="card cg" href="https://yukitchy.github.io/tokyo-arrival-day/" target="_blank" rel="noopener"><img class="shot" src="img/shot-arrival.jpg" width="390" height="293" alt="" loading="lazy"><strong>Tokyo arrival day</strong><em>Family of five · Dec 21</em><span>Two plans around a taiko class, plus five lunch spots to pick from.</span><i>Open the page <b>↗</b></i></a>
+<a class="card cg" href="https://yukitchy.github.io/patrick-tokyo-day/" target="_blank" rel="noopener"><img class="shot" src="img/shot-oneday.jpg" width="390" height="293" alt="" loading="lazy"><strong>A one-day Tokyo plan for one guest</strong><em>Kyudo · metal · Daikanyama</em><span>Three routes built around his interests: a kyudo shop, record stores, a wrestling shop.</span><i>Open the page <b>↗</b></i></a>
+<a class="card cg" href="https://yukitchy.github.io/manga-week/" target="_blank" rel="noopener"><img class="shot" src="img/shot-manga.jpg" width="390" height="293" alt="" loading="lazy"><strong>Manga week</strong><em>Tokyo · Kyoto · Osaka</em><span>A seven-day manga trip across three cities, day by day.</span><i>Open the page <b>↗</b></i></a>
+<a class="card cg" href="https://yukitchy.github.io/shibuya-walk/" target="_blank" rel="noopener"><img class="shot" src="img/shot-walk.jpg" width="390" height="293" alt="" loading="lazy"><strong>Today's walk</strong><em>Shibuya · Daikanyama · Nakameguro</em><span>The page for this afternoon.</span><i>Open the page <b>↗</b></i></a>
+<a class="card cg" href="https://yukitchy.github.io/shibuya-walk/shiori/" target="_blank" rel="noopener"><img class="shot" src="img/shot-shiori.jpg" width="390" height="293" alt="" loading="lazy"><strong>Today's walk, as a map booklet</strong><em>Shibuya · Daikanyama · Nakameguro</em><span>The same afternoon as a scrolling map. Each stop lights up as you read.</span><i>Open the page <b>↗</b></i></a>
+</div><div class="dots"></div>
 </section>
 
-<section>
-<div class="sechead"><span class="n">2</span><b>What every Tokyo day comes with</b></div>
-<div class="cards">
-<div class="card"><strong>A short questionnaire before the day</strong><span>Favorite shows, food limits, walking pace. From the answers I make a one-page plan just for that guest.</span></div>
-<div class="card"><strong>A small gift that matches what they love</strong><span>For a father and his teen daughter, a book from the show she loves and some Pokémon cards. They loved it.</span></div>
-<div class="card"><strong>A shelf of ready routes</strong><span>Half-day and full-day routes I have already walked, so a new request starts from a tested plan.</span></div>
-<div class="card"><strong>Photos the same evening</strong><span>One private link: the best photos of the day, a slideshow, a map of where each was taken, and a download-all button. A couple from Montana got theirs a few hours after each day.</span></div>
-</div>
+<section id="s2" data-c="b">
+<div class="sh"><span class="n" style="background:var(--b)">2</span><h2>What every Tokyo day comes with</h2></div>
+<div class="rail">
+<div class="card cb"><div class="no">01</div><strong>A short questionnaire before the day</strong><span style="margin-top:10px">Favorite shows, food limits, walking pace. From the answers I make a one-page plan just for that guest.</span></div>
+<div class="card cb"><div class="no">02</div><strong>A small gift that matches what they love</strong><span style="margin-top:10px">For a father and his teen daughter, a book from the show she loves and some Pokémon cards. They loved it.</span></div>
+<div class="card cb"><div class="no">03</div><strong>A shelf of ready routes</strong><span style="margin-top:10px">Half-day and full-day routes I have already walked, so a new request starts from a tested plan.</span></div>
+<div class="card cb"><div class="no">04</div><strong>Photos the same evening</strong><span style="margin-top:10px">One private link: the best photos of the day, a slideshow, a map of where each was taken, and a download-all button. A couple from Montana got theirs a few hours after each day.</span></div>
+</div><div class="dots"></div>
 </section>
 
-<section>
-<div class="sechead"><span class="n">3</span><b>Small things your clients will thank you for</b></div>
-<div class="cards">
-<div class="card tip"><strong>Ghibli Museum tickets go on sale on the 10th, at 10 a.m. Japan time, for the next month.</strong><span>December tickets open Nov 10.</span><span class="src"><a href="https://www.ghibli-museum.jp/en/tickets/" target="_blank" rel="noopener">Ghibli Museum, official ↗</a></span></div>
-<div class="card tip"><strong>Some shops close on holiday Mondays.</strong><span>Example: Koyama Kyugu, the kyudo shop in Kanda, is closed on Mondays that are national holidays. I check each shop for the exact day before it goes in a plan.</span></div>
-</div>
+<section id="s3" data-c="y">
+<div class="sh"><span class="n" style="background:var(--y);color:var(--ink)">3</span><h2>Small things your clients will thank you for</h2></div>
+<div class="rail">
+<div class="card cy"><strong>Ghibli Museum tickets go on sale on the 10th, at 10 a.m. Japan time, for the next month.</strong><span style="margin-top:12px">December tickets open Nov 10.</span><span class="src"><a href="https://www.ghibli-museum.jp/en/tickets/" target="_blank" rel="noopener">Ghibli Museum, official ↗</a></span></div>
+<div class="card cy"><strong>Some shops close on holiday Mondays.</strong><span style="margin-top:12px">Example: Koyama Kyugu, the kyudo shop in Kanda, is closed on Mondays that are national holidays. I check each shop for the exact day before it goes in a plan.</span></div>
+</div><div class="dots"></div>
 </section>
 
-<section>
-<div class="sechead"><span class="n">4</span><b>Two things to decide next</b></div>
-<div class="choice">
-<div class="card"><strong>Dec 21 · family of five · taiko class</strong><span>Keep the class at 13:00, or move it to 14:00? 14:00 gives a calm lunch and a boat ride to Asakusa.</span>
-<div class="opts"><a class="btn" href="mailto:icchan417@gmail.com?subject=Dec%2021%20taiko&body=Let%27s%20move%20the%20taiko%20class%20to%2014%3A00.">Move to 14:00</a><a class="btn ghost" href="mailto:icchan417@gmail.com?subject=Dec%2021%20taiko&body=Let%27s%20keep%20the%20taiko%20class%20at%2013%3A00.">Keep 13:00</a></div></div>
-<div class="card"><strong>Manga week</strong><span>Tell me the group size and the dates, and I will fix the day-by-day plan.</span>
-<div class="opts"><a class="btn" href="mailto:icchan417@gmail.com?subject=Manga%20week&body=Group%20size%3A%20%0ADates%3A%20">Send size and dates</a></div></div>
-</div>
+<section id="s4" data-c="r">
+<div class="sh"><span class="n" style="background:var(--r)">4</span><h2>Two things to decide next</h2></div>
+<div class="rail">
+<div class="card cr"><strong>Dec 21 · family of five · taiko class</strong><span style="margin-top:12px">Keep the class at 13:00, or move it to 14:00? 14:00 gives a calm lunch and a boat ride to Asakusa.</span></div>
+<div class="card cr"><strong>Manga week</strong><span style="margin-top:12px">Tell me the group size and the dates, and I will fix the day-by-day plan.</span></div>
+</div><div class="dots"></div>
 </section>
 
-<footer><p>Yuuki · Tokyo local guide · <a href="mailto:icchan417@gmail.com">icchan417@gmail.com</a></p></footer>
-</div>
+<footer><div class="more"><a class="f" href="https://tour.animesenseijp.com/" target="_blank" rel="noopener">The Akihabara anime tour ↗</a><a href="https://www.instagram.com/yukianimesensei/" target="_blank" rel="noopener">@yukianimesensei ↗</a></div><p>Yuuki · Tokyo local guide · <a href="mailto:icchan417@gmail.com">icchan417@gmail.com</a></p></footer>
+</main>
+
+<div class="bar"><div class="in">
+<div class="set on" id="b0"><a class="btn go" href="#s4" style="background:var(--y);color:var(--ink);border-color:var(--y)">Two things to decide next ↓</a></div>
+<div class="set" id="b1"><a class="btn" href="mailto:icchan417@gmail.com?subject=Dec%2021%20taiko&body=Let%27s%20move%20the%20taiko%20class%20to%2014%3A00.">Move to 14:00</a><a class="btn ghost" href="mailto:icchan417@gmail.com?subject=Dec%2021%20taiko&body=Let%27s%20keep%20the%20taiko%20class%20at%2013%3A00.">Keep 13:00</a></div>
+<div class="set" id="b2"><a class="btn" href="mailto:icchan417@gmail.com?subject=Manga%20week&body=Group%20size%3A%20%0ADates%3A%20">Send size and dates</a></div>
+</div></div>
+
+<script>
+var secs=[].slice.call(document.querySelectorAll('section')),tabs=document.querySelectorAll('nav a'),cur=0;
+// dots
+document.querySelectorAll('.promo,section').forEach(function(s){
+  var rail=s.querySelector('.rail'),cards=[].slice.call(rail.children),dots=s.querySelector('.dots');
+  cards.forEach(function(){dots.appendChild(document.createElement('b'))});
+  s._upd=function(){
+    var x=rail.scrollLeft,max=rail.scrollWidth-rail.clientWidth,i=0;
+    if(max-x<4)i=cards.length-1;else{var best=1e9;cards.forEach(function(c,k){var d=Math.abs(c.offsetLeft-16-x);if(d<best){best=d;i=k}})}
+    [].forEach.call(dots.children,function(d,k){d.classList.toggle('on',k===i)});
+    s._i=i;if(s.id==='s4')bar();
+  };
+  rail.addEventListener('scroll',function(){requestAnimationFrame(s._upd)},{passive:true});
+  s._upd();
+});
+// scroll-spy
+function spy(){
+  var y=window.innerHeight*0.35,k=0;
+  secs.forEach(function(s,i){if(s.getBoundingClientRect().top<y)k=i});
+  if(window.innerHeight+window.scrollY>=document.body.scrollHeight-4)k=3;
+  cur=k;tabs.forEach(function(t,i){t.classList.toggle('on',i===k)});bar();
+}
+function bar(){
+  var s4=secs[3],r=s4.getBoundingClientRect(),inView=r.top<window.innerHeight*0.6&&r.bottom>0;
+  var id=inView?'b'+(1+(s4._i||0)):'b0';
+  document.querySelectorAll('.bar .set').forEach(function(e){e.classList.toggle('on',e.id===id)});
+}
+addEventListener('scroll',spy,{passive:true});addEventListener('resize',spy);spy();
+</script>
 </body></html>
