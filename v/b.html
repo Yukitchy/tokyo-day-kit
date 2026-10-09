@@ -61,6 +61,16 @@ h2{font-size:21px;line-height:1.15;letter-spacing:-.02em;font-weight:800;margin:
 .bar .set{display:none;flex:1;gap:8px}.bar .set.on{display:flex}
 footer{padding:30px 16px 20px;font-size:14px;color:var(--mute)}
 footer a{color:var(--ink);font-weight:700}
+.shot{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;object-position:top;border-radius:14px;margin:0 0 14px;background:#fff3}
+.cg i{padding-top:14px}
+.promo{padding:0 0 4px}
+.promo .rail .p{flex:none;width:min(52vw,200px);scroll-snap-align:start;display:block;border-radius:20px;overflow:hidden;border:2px solid var(--ink);line-height:0}
+.promo .rail .p img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block}
+.promo .rail .p img{width:100%!important;max-width:100%!important;height:auto!important;object-fit:contain!important;transform:none!important}
+.more{display:flex;flex-wrap:wrap;gap:8px;padding:0 16px 22px}
+.more a{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:999px;border:2px solid var(--ink);color:var(--ink);text-decoration:none;font-weight:800;font-size:14px;background:#fff}
+.more a.f{background:var(--ink);color:#fff}
+footer .more{padding:0 0 16px}
 @media (min-width:600px){.card{width:300px}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style></head>
@@ -71,6 +81,11 @@ footer a{color:var(--ink);font-weight:700}
 <h1>Your Tokyo day kit</h1>
 <p>Pages you can forward to clients as they are, the tools behind each Tokyo day, and the next two things to decide.</p>
 </header>
+<div class="more"><a class="f" href="https://tour.animesenseijp.com/" target="_blank" rel="noopener">The Akihabara anime tour ↗</a><a href="https://www.instagram.com/yukianimesensei/" target="_blank" rel="noopener">@yukianimesensei ↗</a></div>
+<div class="promo"><div class="rail">
+<a class="p" href="https://tour.animesenseijp.com/" target="_blank" rel="noopener"><img src="../img/promo-1.jpg" width="800" height="1000" alt="Akihabara anime tour promo slide"></a>
+<a class="p" href="https://tour.animesenseijp.com/" target="_blank" rel="noopener"><img src="../img/promo-2.jpg" width="800" height="1000" alt="Akihabara anime tour promo slide" loading="lazy"></a>
+</div><div class="dots"></div></div>
 </div>
 <nav aria-label="Sections"><div class="in">
 <a href="#s1" data-c="g" class="on">1 Pages</a><a href="#s2" data-c="b">2 Each day</a><a href="#s3" data-c="y">3 Tips</a><a href="#s4" data-c="r">4 Decide</a>
@@ -81,10 +96,11 @@ footer a{color:var(--ink);font-weight:700}
 <div class="sh"><span class="n" style="background:var(--g)">1</span><h2>Pages you can forward</h2></div>
 <p class="lead">Each one is a single link. Your client opens it, picks a plan, and replies. No login, no app, works on a phone.</p>
 <div class="rail">
-<a class="card cg" href="https://yukitchy.github.io/tokyo-arrival-day/" target="_blank" rel="noopener"><strong>Tokyo arrival day</strong><em>Family of five · Dec 21</em><span>Two plans around a taiko class, plus five lunch spots to pick from.</span><i>Open the page <b>↗</b></i></a>
-<a class="card cg" href="https://yukitchy.github.io/patrick-tokyo-day/" target="_blank" rel="noopener"><strong>A one-day Tokyo plan for one guest</strong><em>Kyudo · metal · Daikanyama</em><span>Three routes built around his interests: a kyudo shop, record stores, a wrestling shop.</span><i>Open the page <b>↗</b></i></a>
-<a class="card cg" href="https://yukitchy.github.io/manga-week/" target="_blank" rel="noopener"><strong>Manga week</strong><em>Tokyo · Kyoto · Osaka</em><span>A seven-day manga trip across three cities, day by day.</span><i>Open the page <b>↗</b></i></a>
-<a class="card cg" href="https://yukitchy.github.io/shibuya-walk/" target="_blank" rel="noopener"><strong>Today's walk</strong><em>Shibuya · Daikanyama · Nakameguro</em><span>The page for this afternoon.</span><i>Open the page <b>↗</b></i></a>
+<a class="card cg" href="https://yukitchy.github.io/tokyo-arrival-day/" target="_blank" rel="noopener"><img class="shot" src="../img/shot-arrival.jpg" width="390" height="293" alt="" loading="lazy"><strong>Tokyo arrival day</strong><em>Family of five · Dec 21</em><span>Two plans around a taiko class, plus five lunch spots to pick from.</span><i>Open the page <b>↗</b></i></a>
+<a class="card cg" href="https://yukitchy.github.io/patrick-tokyo-day/" target="_blank" rel="noopener"><img class="shot" src="../img/shot-oneday.jpg" width="390" height="293" alt="" loading="lazy"><strong>A one-day Tokyo plan for one guest</strong><em>Kyudo · metal · Daikanyama</em><span>Three routes built around his interests: a kyudo shop, record stores, a wrestling shop.</span><i>Open the page <b>↗</b></i></a>
+<a class="card cg" href="https://yukitchy.github.io/manga-week/" target="_blank" rel="noopener"><img class="shot" src="../img/shot-manga.jpg" width="390" height="293" alt="" loading="lazy"><strong>Manga week</strong><em>Tokyo · Kyoto · Osaka</em><span>A seven-day manga trip across three cities, day by day.</span><i>Open the page <b>↗</b></i></a>
+<a class="card cg" href="https://yukitchy.github.io/shibuya-walk/" target="_blank" rel="noopener"><img class="shot" src="../img/shot-walk.jpg" width="390" height="293" alt="" loading="lazy"><strong>Today's walk</strong><em>Shibuya · Daikanyama · Nakameguro</em><span>The page for this afternoon.</span><i>Open the page <b>↗</b></i></a>
+<a class="card cg" href="https://yukitchy.github.io/shibuya-walk/shiori/" target="_blank" rel="noopener"><img class="shot" src="../img/shot-shiori.jpg" width="390" height="293" alt="" loading="lazy"><strong>Today's walk, as a map booklet</strong><em>Shibuya · Daikanyama · Nakameguro</em><span>The same afternoon as a scrolling map. Each stop lights up as you read.</span><i>Open the page <b>↗</b></i></a>
 </div><div class="dots"></div>
 </section>
 
@@ -114,7 +130,7 @@ footer a{color:var(--ink);font-weight:700}
 </div><div class="dots"></div>
 </section>
 
-<footer><p>Yuuki · Tokyo local guide · <a href="mailto:icchan417@gmail.com">icchan417@gmail.com</a></p></footer>
+<footer><div class="more"><a class="f" href="https://tour.animesenseijp.com/" target="_blank" rel="noopener">The Akihabara anime tour ↗</a><a href="https://www.instagram.com/yukianimesensei/" target="_blank" rel="noopener">@yukianimesensei ↗</a></div><p>Yuuki · Tokyo local guide · <a href="mailto:icchan417@gmail.com">icchan417@gmail.com</a></p></footer>
 </main>
 
 <div class="bar"><div class="in">
@@ -126,7 +142,7 @@ footer a{color:var(--ink);font-weight:700}
 <script>
 var secs=[].slice.call(document.querySelectorAll('section')),tabs=document.querySelectorAll('nav a'),cur=0;
 // dots
-document.querySelectorAll('section').forEach(function(s){
+document.querySelectorAll('.promo,section').forEach(function(s){
   var rail=s.querySelector('.rail'),cards=[].slice.call(rail.children),dots=s.querySelector('.dots');
   cards.forEach(function(){dots.appendChild(document.createElement('b'))});
   s._upd=function(){
